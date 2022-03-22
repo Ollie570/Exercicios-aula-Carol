@@ -1,3 +1,4 @@
+    
 using System;
 
 namespace get_current_time
@@ -7,7 +8,7 @@ namespace get_current_time
         public static void Main(string[] args)
         {
             int gen;
-            string datetime = DateTime.Now.ToString("hh:mm:ss tt");
+            DateTime timeOfDayGreeting = DateTime.Now;
             
             Console.WriteLine("Digite seu primeiro e ultimo nome: ");
             string s = Console.ReadLine();
@@ -31,8 +32,21 @@ namespace get_current_time
                 Console.WriteLine("Genero incorreto!");
             }
             
-            Console.WriteLine("Horario da interacao: " + datetime);
+            Console.WriteLine("Horario da interacao: " + timeOfDayGreeting);
             
+             if (timeOfDayGreeting.Hour >= 5 && timeOfDayGreeting.Hour < 12)
+            {
+                Console.WriteLine("Bom dia!");
+            }
+            else if (timeOfDayGreeting.Hour >= 12 && timeOfDayGreeting.Hour < 16)
+            {
+                Console.WriteLine("Boa tarde!");
+            }
+            else
+            {
+                Console.WriteLine("Boa noite!");
+            }
+
         }
     }
 }
